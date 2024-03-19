@@ -4,7 +4,7 @@ import morgan from "morgan";
 import cors from "cors";
 import {fileURLToPath} from 'url';
 import path from "path";
-// import enrutador from "./src/routes/colores.routes.js";
+import enrutador from "./src/routes/colores.routes.js";
 import './src/database/database.js'
 console.log("index funciona correctamente");
 
@@ -25,4 +25,4 @@ const __dirname = path.dirname(__filename);
 
 app.use(express.static(path.join(__dirname, '/public')));
 
-// app.use('/api', enrutador)
+app.use('/api', enrutador)
