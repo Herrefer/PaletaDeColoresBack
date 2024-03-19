@@ -5,7 +5,7 @@ import cors from "cors";
 import {fileURLToPath} from 'url';
 import path from "path";
 // import enrutador from "./src/routes/colores.routes.js";
-
+import './src/database/database.js'
 console.log("index funciona correctamente");
 
 const app = express();
