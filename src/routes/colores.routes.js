@@ -3,7 +3,7 @@ import { agregarColor, borrarColor, buscarColor, editarColor, listarColores } fr
 
 const enrutador = Router();
 
-enrutador.route('/').get(listarColores).post(agregarColor);
-enrutador.route('/:id').get(buscarColor).delete(borrarColor).put(editarColor);
+enrutador.route('/colores').get(listarColores).post(agregarColor);
+enrutador.route('/colores/:id').get(buscarColor).delete(borrarColor).put(editarColor);
 
 export default enrutador;
