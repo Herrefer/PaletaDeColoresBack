@@ -16,7 +16,14 @@ app.listen(app.get("port"), () => {
 });
 
 app.use(morgan("dev"));
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://paletadecoloresback.onrender.com", // Permite solo solicitudes desde este origen
+
+    methods: ["GET", "POST"], // Métodos HTTP permitidos
+    allowedHeaders: ["Content-Type", "Authorization"], // Cabeceras permitidas
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

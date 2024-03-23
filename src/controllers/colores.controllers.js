@@ -4,7 +4,9 @@ export const agregarColor = async (req, res) => {
   try {
     const colorNuevo = new Color(req.body);
     await colorNuevo.save();
-    await res.status(201).json(colorNuevo);
+    res.status(201).json({
+      mensaje : "Color creado correctamente"
+    });
   } catch (error) {
     res.status(400).json({
       mensaje: "no se pudo procesar la solicitud",
@@ -17,8 +19,8 @@ export const listarColores = async (req, res) => {
     const listaDeColores = await Color.find();
     res.status(200).json(listaDeColores);
   } catch (error) {
-    res.status(400).json({
-      mensaje: "no se pudo procesar la solicitud",
+    res.status(404).json({
+      mensaje: "no se pudo encontrar la lista de colores",
     });
   }
 };
